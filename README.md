@@ -105,4 +105,15 @@ Coffee-Shop-Sales-Analysis/
 │── Coffee_Shop_Sales.ipynb     # Google Colab Notebook
 │── README.md                   # Project Documentation
 
+---
+## 👉 This `README.md` includes:  
+- Title & description  
+- Dataset info  
+- Topics covered  
+- Full code snippets (organized)  
+- Insights & suggestions  
+- How to run instructions  
+
+Do you also want me to **add sample output plots (screenshots/graphs)** inside the README (with Markdown `![]()` image links) so your GitHub looks more professional?
+
 
