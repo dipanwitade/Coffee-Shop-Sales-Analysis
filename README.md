@@ -54,8 +54,6 @@ The goal is to identify **sales patterns, customer trends, and insights** to imp
 ---
 
 ## 💻 Code Snippets
-
-### 1. Import Libraries & Upload File
 ```python
 from google.colab import files
 import pandas as pd
@@ -107,13 +105,4 @@ Coffee-Shop-Sales-Analysis/
 │── Coffee_Shop_Sales.ipynb     # Google Colab Notebook
 │── README.md                   # Project Documentation
 
----
-
-👉 This `README.md` includes:  
-- Title & description  
-- Dataset info  
-- Topics covered  
-- Full code snippets (organized)  
-- Insights & suggestions  
-- How to run instructions  
 
