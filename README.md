@@ -66,3 +66,54 @@ import seaborn as sns
 uploaded = files.upload()
 df = pd.read_excel("DATA[1].xlsx")
 
+# Convert numeric columns
+df["Total Amount"] = pd.to_numeric(df["Total Amount"], errors="coerce")
+df["Quantity"] = pd.to_numeric(df["Quantity"], errors="coerce")
+
+# Convert Date
+df["Transaction Date"] = pd.to_datetime(df["Transaction Date"], errors="coerce")
+
+# Drop missing values
+df = df.dropna(subset=["Total Amount", "Quantity", "Transaction Date"])
+# Convert numeric columns
+df["Total Amount"] = pd.to_numeric(df["Total Amount"], errors="coerce")
+df["Quantity"] = pd.to_numeric(df["Quantity"], errors="coerce")
+
+# Convert Date
+df["Transaction Date"] = pd.to_datetime(df["Transaction Date"], errors="coerce")
+
+# Drop missing values
+df = df.dropna(subset=["Total Amount", "Quantity", "Transaction Date"])
+monthly_sales = df.resample("M", on="Transaction Date")["Total Amount"].sum()
+plt.figure(figsize=(10,5))
+monthly_sales.plot(kind="line", marker="o", color="b")
+plt.title("Monthly Sales Trend")
+plt.xlabel("Month")
+plt.ylabel("Total Sales")
+plt.grid(True)
+plt.show()
+category_sales = df.groupby("Product Category")["Total Amount"].sum().sort_values(ascending=False)
+plt.figure(figsize=(8,5))
+category_sales.plot(kind="bar", color="teal")
+plt.title("Sales by Product Category")
+plt.ylabel("Total Sales")
+plt.show()
+plt.figure(figsize=(6,4))
+sns.heatmap(df[["Quantity", "Total Amount"]].corr(), annot=True, cmap="coolwarm", linewidths=0.5)
+plt.title("Correlation Matrix")
+plt.show()
+Coffee-Shop-Sales-Analysis/
+│── DATA[1].xlsx                # Dataset
+│── Coffee_Shop_Sales.ipynb     # Google Colab Notebook
+│── README.md                   # Project Documentation
+
+---
+
+👉 This `README.md` includes:  
+- Title & description  
+- Dataset info  
+- Topics covered  
+- Full code snippets (organized)  
+- Insights & suggestions  
+- How to run instructions  
+
